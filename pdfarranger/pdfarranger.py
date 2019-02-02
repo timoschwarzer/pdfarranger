@@ -363,6 +363,7 @@ class PdfArranger(Gtk.Application):
             self.window.maximize()
         self.window.set_default_size(*self.config.window_size())
         self.window.connect('delete_event', self.close_application)
+        self.window.set_position(Gtk.WindowPosition.CENTER)
 
         if hasattr(GLib, "unix_signal_add"):
             GLib.unix_signal_add(GLib.PRIORITY_DEFAULT, signal.SIGINT, self.close_application)
